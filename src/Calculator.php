@@ -24,6 +24,10 @@ class Calculator
             }
         }
 
+        if(str_contains($command, "vaciar")){
+            $this->listaActual = "";
+        }
+
         return $this->listaActual;
     }
 }

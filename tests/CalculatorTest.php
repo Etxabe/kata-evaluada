@@ -48,5 +48,15 @@ class CalculatorTest extends TestCase
         $this->assertEquals("leche x2\npan x1", $this->calculator->listaDeLaCompra("añadir pan"));
     }
 
+    /**
+     * @test
+     **/
+    public function givenVaciarAfterInsertingElementsReturnsEmptyList()
+    {
+        $this->assertEquals("leche x2", $this->calculator->listaDeLaCompra("añadir leche 2"));
+
+        $this->assertEquals("", $this->calculator->listaDeLaCompra("vaciar"));
+    }
+
 
 }
