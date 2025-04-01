@@ -10,11 +10,12 @@ class Calculator
         $listaActual = "";
         if(str_contains($command, "añadir")){
             $commandParts = explode(" ", $command);
+            $listaActual = $listaActual . $commandParts[1] . " x";
             if (sizeof($commandParts) < 3) {
-                $listaActual = $listaActual . $commandParts[1] . " x1";
+                $listaActual = $listaActual . "1";
             }
             else{
-                $listaActual = $listaActual . $commandParts[1] . " x" . $commandParts[2];
+                $listaActual = $listaActual . $commandParts[2];
             }
         }
 
