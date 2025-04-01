@@ -9,25 +9,14 @@ class CalculatorTest extends TestCase
 {
     /**
      * @test
-     */
-    public function shouldAddTwoArguments()
+     **/
+    public function givenEmptyStringReturnListState()
     {
         $calculator = new Calculator();
 
-        $result = $calculator->add(1, 2);
+        $response = $calculator->listaDeLaCompra();
 
-        $this->assertEquals(3, $result);
+        $this->assertEquals($response, "");
     }
 
-    /**
-     * @test
-     */
-    public function shouldMultiplyTwoArguments()
-    {
-        $calculator = new Calculator();
-
-        $result = $calculator->multiply(1, 2);
-
-        $this->assertEquals(2, $result);
-    }
 }
