@@ -8,24 +8,22 @@ class Calculator
 
     public function listaDeLaCompra(string $command): string
     {
-        $listaActual = $this->listaActual;
-        if ($listaActual !== "") {
-            $listaActual = $listaActual . "\n";
+        if ($this->listaActual !== "") {
+            $this->listaActual = $this->listaActual . "\n";
         }
 
         if(str_contains($command, "añadir")){
             $commandParts = explode(" ", $command);
-            $listaActual = $listaActual . $commandParts[1] . " x";
+            $this->listaActual = $this->listaActual . $commandParts[1] . " x";
+
             if (sizeof($commandParts) < 3) {
-                $listaActual = $listaActual . "1";
+                $this->listaActual = $this->listaActual . "1";
             }
             else{
-                $listaActual = $listaActual . $commandParts[2];
+                $this->listaActual = $this->listaActual . $commandParts[2];
             }
         }
 
-        $this->listaActual = $listaActual;
-
-        return $listaActual;
+        return $this->listaActual;
     }
 }
