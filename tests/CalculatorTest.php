@@ -7,16 +7,19 @@ use PHPUnit\Framework\TestCase;
 
 class CalculatorTest extends TestCase
 {
+    private $calculator;
+    protected function setUp(): void
+    {
+        $this->calculator = new Calculator();
+    }
+
+
     /**
      * @test
      **/
     public function givenStringVaciarReturnEmptyList()
     {
-        $calculator = new Calculator();
-
-        $response = $calculator->listaDeLaCompra("vaciar");
-
-        $this->assertEquals("", $response);
+        $this->assertEquals("", $this->calculator->listaDeLaCompra("vaciar"));
     }
 
     /**
@@ -24,11 +27,7 @@ class CalculatorTest extends TestCase
      **/
     public function givenAñadirNewElementReturnsListWithNewElement()
     {
-        $calculator = new Calculator();
-
-        $response = $calculator->listaDeLaCompra("añadir pan");
-
-        $this->assertEquals("pan x1", $response);
+        $this->assertEquals("pan x1", $this->calculator->listaDeLaCompra("añadir pan"));
     }
 
 
