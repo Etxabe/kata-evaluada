@@ -16,7 +16,19 @@ class CalculatorTest extends TestCase
 
         $response = $calculator->listaDeLaCompra("vaciar");
 
-        $this->assertEquals($response, "");
+        $this->assertEquals("", $response);
+    }
+
+    /**
+     * @test
+     **/
+    public function givenAñadirNewElementReturnsListWithNewElement()
+    {
+        $calculator = new Calculator();
+
+        $response = $calculator->listaDeLaCompra("añadir pan");
+
+        $this->assertEquals("pan x1", $response);
     }
 
 
