@@ -37,7 +37,7 @@ class CalculatorTest extends TestCase
     {
         $this->assertEquals('leche x2', $this->calculator->listaDeLaCompra('añadir leche 2'));
 
-        $this->assertEquals('leche x2\npan x1', $this->calculator->listaDeLaCompra('añadir pan'));
+        $this->assertEquals('leche x2, pan x1', $this->calculator->listaDeLaCompra('añadir pan'));
     }
 
     /**
@@ -48,6 +48,16 @@ class CalculatorTest extends TestCase
         $this->assertEquals('leche x2', $this->calculator->listaDeLaCompra('añadir leche 2'));
 
         $this->assertEquals('', $this->calculator->listaDeLaCompra('vaciar'));
+    }
+
+    /**
+     * @test
+     **/
+    public function givenAlreadyInsertedElementReturnsListWithSumedQuantitiesOfElement()
+    {
+        $this->assertEquals('leche x2', $this->calculator->listaDeLaCompra('añadir leche 2'));
+
+        $this->assertEquals('leche x4', $this->calculator->listaDeLaCompra('añadir leche 2'));
     }
 
 
