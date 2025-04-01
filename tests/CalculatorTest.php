@@ -19,4 +19,17 @@ class CalculatorTest extends TestCase
         $this->assertEquals($response, "");
     }
 
+    /**
+     * @test
+     **/
+    public function givenStringVaciarReturnEmptyList()
+    {
+        $calculator = new Calculator();
+
+        $response = $calculator->listaDeLaCompra("vaciar");
+
+        $this->assertEquals($response, "");
+    }
+
+
 }
