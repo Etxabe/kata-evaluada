@@ -38,5 +38,15 @@ class CalculatorTest extends TestCase
         $this->assertEquals("leche x3", $this->calculator->listaDeLaCompra("añadir leche 3"));
     }
 
+    /**
+     * @test
+     **/
+    public function givenAñadirTwoElementsReturnsCompleteList()
+    {
+        $this->assertEquals("leche x2", $this->calculator->listaDeLaCompra("añadir leche 2"));
+
+        $this->assertEquals("leche x2\npan x1", $this->calculator->listaDeLaCompra("añadir pan"));
+    }
+
 
 }
