@@ -30,5 +30,13 @@ class CalculatorTest extends TestCase
         $this->assertEquals("pan x1", $this->calculator->listaDeLaCompra("añadir pan"));
     }
 
+    /**
+     * @test
+     **/
+    public function givenAñadirElementoWithQuantityReturnsListWithNewElement()
+    {
+        $this->assertEquals("leche x3", $this->calculator->listaDeLaCompra("añadir leche 3"));
+    }
+
 
 }

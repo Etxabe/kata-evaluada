@@ -13,6 +13,9 @@ class Calculator
             if (sizeof($commandParts) < 3) {
                 $listaActual = $listaActual . $commandParts[1] . " x1";
             }
+            else{
+                $listaActual = $listaActual . $commandParts[1] . " x" . $commandParts[2];
+            }
         }
 
         return $listaActual;
